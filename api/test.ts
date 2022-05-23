@@ -19,8 +19,7 @@ export default async (request: VercelRequest, response: VercelResponse) => {
     ]
   }
 */
-
-  console.log(request.body.events[0].message);
+  console.log(JSON.stringify(request.body));
 
   response.status(200).send("Hello World!");
 };
