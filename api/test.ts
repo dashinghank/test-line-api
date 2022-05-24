@@ -6,7 +6,13 @@ const config = {
 };
 
 export default async (request: VercelRequest, response: VercelResponse) => {
-  Promise.all(request.body.events.map(handleEvent)).then((result) => response.json(result));
+  try {
+    await handleEvent(request.body.events[0]);
+  } catch (error) {
+    console.error(error);
+    response.status(500).send("Internal Server Error");
+  }
+
   // console.log(request);
 
   /* request 範例
@@ -33,6 +39,7 @@ export default async (request: VercelRequest, response: VercelResponse) => {
 };
 
 const client = new line.Client(config);
+
 function handleEvent(event) {
   if (event.type !== "message" || event.message.type !== "text") {
     return Promise.resolve(null);
