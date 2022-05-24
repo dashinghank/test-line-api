@@ -44,19 +44,20 @@ function handleEvent(event) {
   if (event.type !== "message" || event.message.type !== "text") {
     return Promise.resolve(null);
   }
+  ///這是群組ID回副
+  // return  client.pushMessage("C2be5c6f9b655c9b133d6174dc1f49bf3", {
+  //   text: "這是我的回覆:群組測試",
+  //   type: "text",
+  // }
 
-  return  client.pushMessage("C2be5c6f9b655c9b133d6174dc1f49bf3", {
-    text: "這是我的回覆:群組測試",
+  //群組推播
+  return client.multicast(["U4a753e22048f8e07be32962f1a96b642", "C2be5c6f9b655c9b133d6174dc1f49bf3"], {
+    text: "這是我的回覆:個人+群組測試",
     type: "text",
-  }
-
-//群組推播
-  // return client.multicast(["U4a753e22048f8e07be32962f1a96b642","C2be5c6f9b655c9b133d6174dc1f49bf3"], {})
-  
+  });
 
   // return client.replyMessage(event.replyToken, {
   //   type: "text",
   //   text: "這是我的回覆:" + event.message.text,
   // });
 }
-
