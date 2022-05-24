@@ -45,10 +45,14 @@ function handleEvent(event) {
     return Promise.resolve(null);
   }
 
-  return  client.pushMessage("U4a753e22048f8e07be32962f1a96b642", {
+  return  client.pushMessage("C2be5c6f9b655c9b133d6174dc1f49bf3", {
+    text: "這是我的回覆:群組測試",
     type: "text",
-    text: "這是我的回覆:asdadqqdq",
   }
+
+//群組推播
+  // return client.multicast(["U4a753e22048f8e07be32962f1a96b642","C2be5c6f9b655c9b133d6174dc1f49bf3"], {})
+  
 
   // return client.replyMessage(event.replyToken, {
   //   type: "text",
