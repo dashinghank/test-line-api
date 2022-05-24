@@ -51,8 +51,8 @@ function handleEvent(event) {
   // }
 
   //群組推播
-  return client.multicast(["U4a753e22048f8e07be32962f1a96b642", "C2be5c6f9b655c9b133d6174dc1f49bf3"], {
-    text: "這是我的回覆:個人+群組測試",
+  return client.multicast(["U4a753e22048f8e07be32962f1a96b642"], {
+    text: "這是我的回覆:multicast 測試",
     type: "text",
   });
 
