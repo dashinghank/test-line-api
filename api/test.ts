@@ -45,8 +45,14 @@ function handleEvent(event) {
     return Promise.resolve(null);
   }
 
-  return client.replyMessage(event.replyToken, {
+  return  client.pushMessage("U4a753e22048f8e07be32962f1a96b642", {
     type: "text",
-    text: "這是我的回覆:" + event.message.text,
-  });
+    text: "這是我的回覆:asdadqqdq",
+  }
+
+  // return client.replyMessage(event.replyToken, {
+  //   type: "text",
+  //   text: "這是我的回覆:" + event.message.text,
+  // });
 }
+
