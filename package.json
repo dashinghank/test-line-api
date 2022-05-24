@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "@line/bot-sdk": "^7.5.0",
     "@vercel/node": "^1.15.3"
   }
 }
